@@ -30,7 +30,7 @@ buffer = '3 hours ago'
 
 ## Logging configuration
 LOG_LEVEL = 20 ## CRITICAL = 50, ERROR = 40, WARNING = 30, INFO = 20, DEBUG = 10, NOTSET = 0
-log_to_file = False ## Set this to True to log trading session to a file also
+log_to_file = False ## Установите для этого параметра значение True, чтобы также записать торговую сессию в файл.
 
 '''
 For lower end PCs/ servers it may be better to have this as False, but if you see errors about reconnecting issues

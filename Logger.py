@@ -7,10 +7,10 @@ import sys
 
 
 def get_logger():
-    # Create a logger and set its level to LOG_LEVEL
+    # Создаем регистратор и устанавливаем его уровень на LOG_LEVEL
     log = logging.getLogger()
     log.setLevel(LOG_LEVEL)
-    # Create a formatter with colorlog's ColoredFormatter
+    # Создаем форматтер с помощью ColoredFormatter от colorlog.
     formatter = colorlog.ColoredFormatter(
         "%(log_color)s%(asctime)s %(levelname)s: %(message)s",
         datefmt="%d-%m-%Y %H:%M:%S",
@@ -27,19 +27,19 @@ def get_logger():
             "%(asctime)s %(levelname)s: %(message)s",
             datefmt="%d-%m-%Y %H:%M:%S",
         )
-        # Get the current datetime
+        # Получить текущую дату и время
         current_datetime = datetime.now()
-        # Format the datetime with underscores between elements
+        # Форматируем дату и время с помощью подчеркиваний между элементами
         formatted_datetime = current_datetime.strftime("%d_%m_%Y_%H_%M_%S")
-        # Create a file handler and set the formatter
+        # Создаём обработчик файлов и устанавливаем форматтер
         file_handler = logging.FileHandler(f"Live_Trading_{formatted_datetime}.log")
         file_handler.setFormatter(file_formatter)
         log.addHandler(file_handler)
 
-    # Create a console handler and set the formatter
+    # Создаём обработчик консоли и устанавливаем форматтер
     console_handler = logging.StreamHandler()
     console_handler.setFormatter(formatter)
-    # Add the console handler to the logger
+    # Добавляем обработчик консоли в логгер
     log.addHandler(console_handler)
     return log
 
